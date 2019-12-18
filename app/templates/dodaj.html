@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}
+        </p>
+        <p>
+          <select name="type">
+            {% for o in form.type %}
+              <option value="{{ o.type }}">{{ o.type }}</option>
+            {% endfor %}
+          </select>
+        </p>
+        <p>
+            <select name="year">
+              {% for o in form.year %}
+                <option value="{{ o.year }}">{{ o.year }}</option>
+              {% endfor %}
+            </select>
+        </p>
+        <p>{{ form.show() }}</p>
+    </form>
+{% endblock %}

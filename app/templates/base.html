@@ -1,0 +1,30 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        {% if title %}
+        <title>{{ title }} - wypożyczalnia</title>
+        {% else %}
+        <title>wypożyczalnia</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+          Wypożyczalnia:
+          <a href="/index">Home</a>
+          <a href="/wypozycz">Wypozycz</a>
+          <a href="/dodaj">Dodaj pozycje</a>
+          <a href="/oddaj">Dodaj pozycje</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
