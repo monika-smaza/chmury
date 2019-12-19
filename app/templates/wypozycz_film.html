@@ -7,20 +7,23 @@
 {% block content %}
 <form action="" method="post" novalidate>
 <table style="width:100%">
+  <div>
   <tr>
     <th>tytuł</th>
     <th>rok</th>
     <th>gatunek</th>
   </tr>
   {% for item in session.pop('list', []) %}
-  <form action="" method="post" novalidate>
   <tr>
     <td>{{ item["title"] }} </td>
     <td>{{ item["year"] }}</td>
     <td>{{ item["type"] }}</td>
   </tr>
-  </form>
   {% endfor %}
+  </div>
+  <div>
+  <input type="submit" value="Wypozycz" name="Wypozycz"/>
+  </div>
 </table>
 </form>
 

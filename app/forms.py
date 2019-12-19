@@ -19,3 +19,14 @@ class RentForms(Form):
 
 class AddForm(Form):
     show = SubmitField('Dodaj')
+
+
+class AuthForm(FlaskForm):
+    login =  StringField('login', validators=[DataRequired()])
+    password = PasswordField('password', validators=[DataRequired()])
+
+class SingInForm(AuthForm):
+    submit = SubmitField('Utwórz konto')
+
+class LogIn(AuthForm):
+    submit = SubmitField('Zaloguj się')
